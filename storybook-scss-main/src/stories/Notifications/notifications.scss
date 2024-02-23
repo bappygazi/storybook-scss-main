@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+$main-white: #fff;
+$main-primary: #1f378f;
+$main-darkGray: #747d8a;
+$main-blue: #6475e9;
+$main-less-white: #efeeee;
+$main-light-navy: #233e9f0f;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+small {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: $main-darkGray;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.notification_section {
+  padding: 100px 0;
+  background-color: $main-white;
+
+  .main_header {
+    font-size: 60px;
+    line-height: 120px;
+    font-weight: 400;
+    color: $main-primary;
+  }
+
+  .layout_column_section {
+    margin-top: 32px;
+
+    .layout_header_wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 136px;
+
+      .layout_header {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 500;
+      }
+    }
+
+    .group_wrapper {
+      .group_card {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 136px;
+        grid-row-gap: 50px;
+
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+          grid-column-gap: 50px;
+        }
+
+        .notify_card {
+          border-bottom: 1px solid $main-less-white;
+        }
+
+        .notify_card_body {
+          margin-top: 28px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 24px;
+
+          .ellipse {
+            width: 8px;
+            height: 8px;
+            background-color: $main-blue;
+            border-radius: 50%;
+            margin-left: -20px;
+          }
+
+          img {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+
+          .title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 8px;
+            max-width: 360px;
+
+            span {
+              font-weight: 500;
+            }
+          }
+
+          .title_long {
+            max-width: 320px;
+          }
+        }
+
+        .card_hover {
+          &:hover {
+            background-color: $main-light-navy;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
+        .small_hover {
+          padding: 12px 16px;
+        }
+      }
+    }
+  }
+}
